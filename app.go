@@ -12,9 +12,7 @@ func main() {
 	outputText("Tax Rate: ")
 	fmt.Scan(&taxRate)
 
-	ebt := revenue - expenses
-	profit := ebt * (1 - (taxRate / 100))
-	ratio := ebt / profit
+	ebt, profit, ratio := calculator(revenue, expenses, taxRate)
 
 	fmt.Printf("Earning Before Tax: %.2f\n", ebt)
 	fmt.Printf("Earning After Tax (Profit): %.2f\n", profit)
@@ -23,4 +21,12 @@ func main() {
 
 func outputText(text string) {
 	fmt.Print(text)
+}
+
+func calculator(revenue, expenses, taxRate float64) (float64, float64, float64) {
+	ebt := revenue - expenses
+	profit := ebt * (1 - (taxRate / 100))
+	ratio := ebt / profit
+
+	return ebt, profit, ratio
 }
