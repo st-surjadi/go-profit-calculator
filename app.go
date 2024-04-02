@@ -5,11 +5,11 @@ import "fmt"
 func main() {
 	var revenue, expenses, taxRate float64
 
-	fmt.Print("Revenue: ")
+	outputText("Revenue: ")
 	fmt.Scan(&revenue)
-	fmt.Print("Expenses: ")
+	outputText("Expenses: ")
 	fmt.Scan(&expenses)
-	fmt.Print("Tax Rate: ")
+	outputText("Tax Rate: ")
 	fmt.Scan(&taxRate)
 
 	ebt := revenue - expenses
@@ -21,6 +21,6 @@ func main() {
 	fmt.Printf("Ratio (EBT/Profit): %.2f", ratio)
 }
 
-func outputText() {
-
+func outputText(text string) {
+	fmt.Print(text)
 }
